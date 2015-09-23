@@ -1,0 +1,2 @@
+# SnipeAPI
+API documentation site
