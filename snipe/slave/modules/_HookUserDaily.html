@@ -23,6 +23,6 @@ Module subscription API is described in detail in
 Called for each user online at the start of new day if the module is subscribed to it.
 You can subscribe the module to this event in the constructor like this:</p>
 <pre><code>server.subscribeModule("user.daily", this);</code></pre>
-<p>Note: The actual work is done through the client demon on next client message.</p>
+<p>Note: The actual work is done through the client timer on next client message.</p>
 <p>Note: The new day begins at 00:00 of server time.</p>
 <p>Note: This hook will be called on loading user from database if the next day started.</p>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>user</code> <p>User instance.</p>        </div>    </div></div>                                                        </div>                            </div></div>        </div></div><footer class="section dark site-footer"><div class="container"><div class="copyright"><p>&copy;2015&nbsp;<a href="http://mini-it.ru/index_en.htm" title="Mini IT Website" class="hf-link">Mini IT Ltd</a></p></div></div></footer>    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script></body></html>
