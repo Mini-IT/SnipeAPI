@@ -20,7 +20,7 @@ Can use SQL query results to set input values.
 Module manager API is described in detail in
 <a target=_blank href="https://github.com/Mini-IT/SnipeWiki/wiki/PageBlocksEditor">Page Blocks</a> article.</p>
 <p>Usage cheatsheet:</p>
-<pre><code>manager.addForm({ 
+<pre><code>manager.addForm({
   type: BLOCK_FORM,
   enctype: "multipart/form-data", // optional
   width: 550, // optional
@@ -64,7 +64,7 @@ Module manager API is described in detail in
         "FROM ItemSlots ORDER BY Name" },
 
     // drop-down list from an array of name, value pairs
-    { title: "Item Group", name: "groupid", type: INPUT_SELECT, 
+    { title: "Item Group", name: "groupid", type: INPUT_SELECT,
       values: [
         { name: "group name 1", value: 1 },
         { name: "group name 2", value: 2 }
@@ -77,6 +77,9 @@ Module manager API is described in detail in
     // hidden value
     { name: "hiddenVal", value: "15", type: INPUT_HIDDEN },
 
+    // date/time text and selector
+    { title: "Start date (DD.MM.YYYY HH:MM)", name: "datestart",
+      type: INPUT_DATETIME },
     ],
   }, vars);</code></pre>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>form</code> <p>Page block.</p>        </div>            <div class="indent inline-content">            <code>vars</code> <p>Request variables.</p>        </div>    </div></div>                                                                                                                            <div class="field "><a name="addList"></a><h3><p><code>    <a href="#addList"><span class="identifier">addList</span></a> (block:<a class="type" title="Module export page block." href="../../snipe/edit/_ExportBlock.html">_ExportBlock</a>, vars:<a class="type" title="HTTP request variables wrapper." href="../../snipe/edit/Vars.html">Vars</a>):<a class="type" title="The standard Void type." href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Outputs a list from SQL query results.
 Module manager API is described in detail in
@@ -118,7 +121,8 @@ Module manager API is described in detail in
 <pre><code>manager.doInsert({
   table: "TableName",
   insert: [ "checkbox:col1", "col2", "col3", "datetime:date", "now:date" ],
-  insertParams: [ "minLevel", "float:minMoment", "checkbox:nitroDisabled" ], // json-object params
+  insertParams: [ "minLevel", "float:minMoment", "checkbox:nitroDisabled",
+    "string:myString" ], // json-object params
 }, vars);</code></pre>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>m</code> <p>Editor module export.</p>        </div>            <div class="indent inline-content">            <code>vars</code> <p>Request variables.</p>        </div>        <p class="javadoc">Returns:</p>    <div class="indent inline-content">        <p>True, if query was successful.</p>    </div></div></div>                                                                                                                            <div class="field "><a name="doUpdate"></a><h3><p><code>    <a href="#doUpdate"><span class="identifier">doUpdate</span></a> (m:<a class="type" title="Editor module export class." href="../../snipe/edit/_ModuleExport.html">_ModuleExport</a>, vars:<a class="type" title="HTTP request variables wrapper." href="../../snipe/edit/Vars.html">Vars</a>, traceQuery:<a class="type" title="The standard Boolean type, which can either be true or false." href="../../Bool.html">Bool</a>):<a class="type" title="The standard Boolean type, which can either be true or false." href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Performs SQL UPDATE query.
 Module manager API is described in detail in
 <a target=_blank href="https://github.com/Mini-IT/SnipeWiki/wiki/ModulesEditor#sql-query-mode">Editor Modules</a> article.</p>
@@ -126,7 +130,8 @@ Module manager API is described in detail in
 <pre><code>manager.doUpdate({
   table: "TableName",
   update: [ "checkbox:col1", "col2", "col3", "datetime:date", "now:date" ],
-  updateParams: [ "minLevel", "float:minMoment", "checkbox:nitroDisabled" ], // json-object params
+  updateParams: [ "minLevel", "float:minMoment", "checkbox:nitroDisabled",
+    "string:myString" ], // json-object params
 }, vars);</code></pre>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>m</code> <p>Editor module export.</p>        </div>            <div class="indent inline-content">            <code>vars</code> <p>Request variables.</p>        </div>            <div class="indent inline-content">            <code>traceQuery</code> <p>If set to true, will output the SQL query.</p>        </div>        <p class="javadoc">Returns:</p>    <div class="indent inline-content">        <p>True, if query was successful.</p>    </div></div></div>                                                                                                                            <div class="field "><a name="doUpload"></a><h3><p><code>    <span class="label">inline</span> <a href="#doUpload"><span class="identifier">doUpload</span></a> (m:<a class="type" title="Editor module export class." href="../../snipe/edit/_ModuleExport.html">_ModuleExport</a>, vars:<a class="type" title="HTTP request variables wrapper." href="../../snipe/edit/Vars.html">Vars</a>):<a class="type" title="The standard Boolean type, which can either be true or false." href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Performs file upload.
 Module manager API is described in detail in
 <a target=_blank href="https://github.com/Mini-IT/SnipeWiki/wiki/ModulesEditor#uploading-files">Editor Modules</a> article.</p>
