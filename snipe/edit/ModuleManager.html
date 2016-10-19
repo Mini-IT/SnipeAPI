@@ -85,7 +85,7 @@ Module manager API is described in detail in
 Module manager API is described in detail in
 <a target=_blank href="https://github.com/Mini-IT/SnipeWiki/wiki/PageBlocksEditor">Page Blocks</a> article.</p>
 <p>Usage cheatsheet:</p>
-<pre><code>manager.addList({ 
+<pre><code>manager.addList({
   type: BLOCK_LIST,
   title: "Search",
   pageRows: 50,
@@ -96,7 +96,7 @@ Module manager API is described in detail in
   actionPost: "&amp;chainid=[id]&amp;rowval=[row.value]",
   query: "SELECT * FROM Users WHERE ID &gt; [id] ORDER BY Name",
   fields: [ "id", "name", "minLevel", "isDaily" ],
-  fieldsExt: [ 
+  fieldsExt: [
     { name: "minLevel", func: this.minLevel },
     { name: "isDaily", param: "isDaily" }
     ]
@@ -145,7 +145,7 @@ Example usage:</p>
 // s = "core/calendar.edit&amp;id=3&amp;eventid=10";
 var s = manager.parse("core/calendar.edit&amp;id=[id]&amp;eventid=[eventid]", vars);
 
-// supplied database row fields 
+// supplied database row fields
 // s = "core/calendar.edit&amp;id=3&amp;eventval=10";
 var s = manager.parse("core/calendar.edit&amp;id=[id]&amp;eventval=[row.value]", vars, row);</code></pre>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>tpl</code> <p>Template string.</p>        </div>            <div class="indent inline-content">            <code>vars</code> <p>Request variables.</p>        </div>            <div class="indent inline-content">            <code>row</code> <p>Database row.</p>        </div>        <p class="javadoc">Returns:</p>    <div class="indent inline-content">        <p>Resulting string.</p>    </div></div></div>                                                                                                                            <div class="field "><a name="registerActionPost"></a><h3><p><code>    <a href="#registerActionPost"><span class="identifier">registerActionPost</span></a> (type:<a class="type" title="The basic String class." href="../../String.html">String</a>, func:<a class="type" title="HTTP request variables wrapper." href="../../snipe/edit/Vars.html">Vars</a>&nbsp;&#8209;&gt;&nbsp;<a class="type" title="The standard Void type." href="../../Void.html">Void</a>):<a class="type" title="The standard Void type." href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Registers a function to run post-execution of module export.</p>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>type</code> <p>Full module export name.</p>        </div>            <div class="indent inline-content">            <code>func</code> <p>Function to execute.
 Has a single argument - HTTP request variables.</p>        </div>    </div></div>                                                                                                                            <div class="field "><a name="registerBlocks"></a><h3><p><code>    <a href="#registerBlocks"><span class="identifier">registerBlocks</span></a> (type:<a class="type" title="The basic String class." href="../../String.html">String</a>, blocks:<a class="type" title="An Array is a storage for values." href="../../Array.html">Array</a>&lt;<a class="type" title="Module export page block." href="../../snipe/edit/_ExportBlock.html">_ExportBlock</a>&gt;):<a class="type" title="The standard Void type." href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Registers additional blocks in module export.</p>    <p class="javadoc">Parameters:</p>            <div class="indent inline-content">            <code>type</code> <p>Full module export name.</p>        </div>            <div class="indent inline-content">            <code>blocks</code> <p>List of additional blocks.
