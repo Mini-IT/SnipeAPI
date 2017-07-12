@@ -23,5 +23,7 @@ custom iterators.</p>            </div></div>                            <h3 cla
 underlying data structure were handled through calls to next(). However,
 in custom iterators any logic may be used to determine the completion
 state.</p></div></div>                                            <div class="field "><a name="next"></a><h3><p><code>    <a href="#next"><span class="identifier">next</span></a> ():<span class="type">T</span></code></p></h3><div class="doc"><p>Returns the current item of the Iterator and advances to the next one.</p>
-<p>This method is not required to check hasNext() first. A call to this
-method while hasNext() is false yields unspecified behavior.</p></div></div>                                                </div>        </div></div>        </div></div><footer class="section dark site-footer"><div class="container"><div class="copyright"><p>&copy;2017&nbsp;<a href="http://mini-it.ru/index_en.htm" title="Mini IT Website" class="hf-link">Mini IT Ltd</a></p></div></div></footer>    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script></body></html>
+<p>This method is not required to check <code>hasNext</code> first. A call to this
+method while <code>hasNext</code> is false yields unspecified behavior.</p>
+<p>On the other hand iterators should not require a call to <code>hasNext</code>
+before the first call to <code>next</code> if an element is available.</p></div></div>                                                </div>        </div></div>        </div></div><footer class="section dark site-footer"><div class="container"><div class="copyright"><p>&copy;2017&nbsp;<a href="http://mini-it.ru/index_en.htm" title="Mini IT Website" class="hf-link">Mini IT Ltd</a></p></div></div></footer>    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script></body></html>
